@@ -1,0 +1,31 @@
+module(
+    name = "learn_bazel",
+    version = "1.0"
+)
+
+bazel_dep(name = "rules_java", version = "7.6.0")
+bazel_dep(name = "rules_jvm_external", version = "6.2")
+
+java_toolchains = use_extension(
+    "@rules_java//java/extensions:java.bzl",
+    "java_toolchains"
+)
+
+use_repo(java_toolchains, "remotejdk21")
+
+maven = use_extension(
+    "@rules_jvm_external//:extensions.bzl",
+    "maven"
+)
+
+use_repo(maven, "maven")
+
+maven.install(
+    name = "maven",
+    artifacts = [
+        "org.apache.commons:commons-lang3:3.14.0"
+    ],
+    repositories = [
+        "https://repo1.maven.org/maven2"
+    ],
+)
