@@ -15,3 +15,22 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+.idea/
+*.iml
+
+.gradle/
+build/
+out/
+
+
+.gradle-cache/
+
+
+
+bazel-*
+*.bazel.lock
+
+bazel-bin/
+bazel-testlogs/
+bazel-out/
+bazel-mypkg/

@@ -1,0 +1,3 @@
+добавил Apache Commons Lang3
+использовал StringUtils.reverse
+показал работу Maven dependency management
